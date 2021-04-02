@@ -21,7 +21,7 @@ event zeek_drone() {
 	local IP: addr;
 	for (IP in IPtable) {
 		if (|IPtable[IP]| >= 3) {
-			print(IP, " is a proxy");
+			print(addr_to_uri(IP) + " is a proxy");
 		}
 	}
 }
